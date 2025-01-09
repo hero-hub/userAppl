@@ -96,25 +96,5 @@ public class UserManager
         }
         return 3; // Пользователь не найден
 
-
-        //string[] lines = File.ReadAllLines(FilePath);
-        //foreach (string line in lines)
-        //{
-        //    string[] parts = line.Split(',');
-
-        //    if (parts.Length != 3)
-        //        continue;
-
-        //    string storedLogin = parts[0];
-        //    string storedEmail = parts[1];
-        //    string storedHashedPass = parts[2];
-
-        //    if (login == storedLogin || login == storedEmail)
-        //    {
-        //        if (_hashingService.VerifyPassword(pass, storedHashedPass)) return 1;
-
-        //        else return 2;
-        //    }
-        //}
     }
 }

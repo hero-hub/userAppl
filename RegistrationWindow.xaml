@@ -6,20 +6,25 @@
 
         <!-- Имя пользователя -->
         <TextBlock Text="Имя пользователя:" Margin="5" />
-        <TextBox x:Name="UsernameBox" Width="250" Margin="5" />
-        <!-- <TextBox Text="{Binding Path=DataUser.Username}" Width="250" Margin="5" /> -->
+        <!-- <TextBox x:Name="UsernameBox" Width="250" Margin="5" /> -->
+        <TextBox Text="{Binding Path=Username, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" Width="250" Margin="5" />
+        <TextBlock Text="{Binding Path=Username}" />
+
         <!-- Email -->
         <TextBlock Text="Email:" Margin="5" />
-        <TextBox x:Name="EmailBox" Width="250" Margin="5" />
+        <!-- <TextBox x:Name="EmailBox" Width="250" Margin="5" /> -->
+        <TextBox Text="{Binding Path=Email, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" Width="250" Margin="5" />
 
         <!-- Пароль -->
         <TextBlock Text="Пароль:" Margin="5" />
-        <TextBox x:Name="PasswordBox" Width="250" Margin="5" />
+        <!-- <TextBox x:Name="PasswordBox" Width="250" Margin="5" /> -->
+        <TextBox Text="{Binding Path=Password, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" Width="250" Margin="5" />
 
         <!-- Повтор пароля -->
         <TextBlock Text="Повтор пароля:" Margin="5" />
-        <TextBox x:Name="RepeatPasswordBox" Width="250" Margin="5" />
-
+        <!-- <TextBox x:Name="RepeatPasswordBox" Width="250" Margin="5" /> -->
+        <TextBox Text="{Binding Path=RepeatPass, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" Width="250" Margin="5" />
+        
         <!-- Кнопка Регистрация -->
         <Button Content="Зарегистрироваться" Width="150" Margin="10" Click="RegisterButton_Click" FontFamily="Century Gothic"/>
 

@@ -7,13 +7,12 @@ namespace App
         public RegistrationWindow()
         {
             InitializeComponent();
+            this.DataContext = new DataUserWithRepeatPass();
         }
-
-
 
         private void RegisterButton_Click(object sender, RoutedEventArgs e)
         {
-            DataUserWithRepeatPass newUser = new DataUserWithRepeatPass(UsernameBox.Text, PasswordBox.Text, EmailBox.Text, RepeatPasswordBox.Text);
+            DataUserWithRepeatPass newUser = (DataUserWithRepeatPass)this.DataContext;
             UserManager userManager = new UserManager();
 
             switch (userManager.Register(newUser))
