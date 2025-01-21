@@ -1,14 +1,10 @@
 ﻿using System.ComponentModel;
 using System.Diagnostics;
+using System.Runtime.CompilerServices;
 
 public class DataUser : INotifyPropertyChanged
 {
     public event PropertyChangedEventHandler PropertyChanged;
-
-    protected virtual void OnPropertyChanged(string propertyName = "")
-    {
-        PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
-    }
 
     private string userName;
 
@@ -22,7 +18,7 @@ public class DataUser : INotifyPropertyChanged
         set
         {
             userName = value;
-            OnPropertyChanged(nameof(UserName));
+            OnPropertyChanged();
         }
     }
     public string Password
@@ -30,7 +26,7 @@ public class DataUser : INotifyPropertyChanged
         get => password;
         set {
             password = value;
-            OnPropertyChanged(nameof(Password));
+            OnPropertyChanged();
         } 
     }
     public string Email
@@ -38,10 +34,10 @@ public class DataUser : INotifyPropertyChanged
         get => email;
         set {
             email = value;
-            OnPropertyChanged(nameof(Email));
+            OnPropertyChanged();
         }
     }
-
+    //Для LoadUser, возможно получится убрать после создания вьюмодели
     public DataUser(string username, string password, string email)
     {
         UserName = username;
@@ -52,33 +48,9 @@ public class DataUser : INotifyPropertyChanged
     {
     
     }
-
-}
-
-public class DataUserWithRepeatPass : DataUser
-{
-    private string repeatPass;
-
-    public string RepeatPass
+    protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
     {
-        get => repeatPass;
-        set
-        {
-            repeatPass = value;
-            OnPropertyChanged(nameof(RepeatPass));
-        }
+        PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
     }
 
-    public DataUserWithRepeatPass() : base()
-    {
-    }
-
-    public DataUserWithRepeatPass(string username, string password, string email, string repeatPass)
-        : base()
-    {
-        UserName = username;
-        Password = password;
-        Email = email;
-        RepeatPass = repeatPass;
-    }
 }

@@ -2,7 +2,7 @@
 using System.Security.Cryptography;
 using System.Text;
 
-namespace UserApp
+namespace App
 {
     public class HashingService
     {
