@@ -2,11 +2,11 @@
 
 namespace App
 {
-    public class UserManagerViewModel : BaseViewModel
+    public class UserManagerVM : BaseViewModel
     {
         private readonly UserManager _userManager = new UserManager();
 
-        public UserManagerViewModel()
+        public UserManagerVM()
         {
             RegisterCommand = new RelayCommand(Register, CanRegister);
             LoginCommand = new RelayCommand(Login, CanLogin);
@@ -34,7 +34,7 @@ namespace App
                 RepeatPass = RepeatPassword
             };
 
-            UserManager result = _userManager.Register(user);
+            int result = _userManager.Register(user);
 
             switch (result)
             {
@@ -66,7 +66,7 @@ namespace App
         // Методы для входа
         private void Login(object parameter)
         {
-            UserManager result = _userManager.Signin(UserName, Password);
+            int result = _userManager.Signin(UserName, Password);
 
             switch (result)
             {

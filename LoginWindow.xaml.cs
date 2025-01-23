@@ -7,7 +7,13 @@ namespace App
         public LoginWindow()
         {
             InitializeComponent();
-            DataContext = new LoginWindowViewModel();
+            DataContext = new LoginWindowVM();
+        }
+        private void RegistrationButton_Click(object sender, RoutedEventArgs e)
+        {
+            RegistrationWindow regWindow = new RegistrationWindow();
+            regWindow.Show();
+            this.Close();
         }
     }
 }

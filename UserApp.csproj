@@ -77,10 +77,10 @@
     </Compile>
     <Compile Include="UserManager.cs" />
     <Compile Include="ViewModel\BaseViewModel.cs" />
-    <Compile Include="ViewModel\LoginWindowViewModel.cs" />
-    <Compile Include="ViewModel\RegistretionWindowViewModel.cs" />
+    <Compile Include="ViewModel\LoginWindowVM.cs" />
+    <Compile Include="ViewModel\RegistretionVM.cs" />
     <Compile Include="ViewModel\RelayCommand.cs" />
-    <Compile Include="ViewModel\UserManagerViewModel.cs" />
+    <Compile Include="ViewModel\UserManagerVM.cs" />
     <Page Include="LoginWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
