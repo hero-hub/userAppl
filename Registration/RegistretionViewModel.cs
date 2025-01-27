@@ -21,7 +21,7 @@ namespace App
 
         private void Register(object parameter)
         {
-            AdvencedUser user = new AdvencedUser
+            AdvencedUserModel user = new AdvencedUserModel
             {
                 UserName = UserName,
                 Email = Email,
@@ -30,7 +30,7 @@ namespace App
             };
 
             int result = _userManager.Register(user);
-            // MessageBox.Show(result == 0 ? "" : ""); // временный вывод
+            MessageBox.Show(result == 0 ? "" : ""); // временный вывод
 
             ErrorMessage = result == 3 ? "Успешная регистрация" : string.Empty;
             ErrorMessage = result == 2 ? "Email уже зарегистрирован" : string.Empty;

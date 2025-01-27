@@ -3,11 +3,11 @@ using System.Windows.Input;
 
 namespace App
 {
-    public class LoginWindowVM : BaseViewModel
+    public class LoginViewModel : BaseViewModel
     {
         private readonly UserManager _userManager;
 
-        public LoginWindowVM()
+        public LoginViewModel()
         {
             _userManager = new UserManager();
             LoginCommand = new RelayCommand(Log);
