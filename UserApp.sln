@@ -11,12 +11,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UserApp", "UserApp.csproj",
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Элементы решения", "Элементы решения", "{2D35B7AF-65AF-4423-9F51-B53BFC6B5FCD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UserApp.Core", "..\Core\UserApp.Core.csproj", "{41FDCA58-030C-4343-8339-B4E39307DA93}"
-	ProjectSection(ProjectDependencies) = postProject
-		{D8FFFF00-C37A-4B2E-986F-449A6ADB449B} = {D8FFFF00-C37A-4B2E-986F-449A6ADB449B}
-	EndProjectSection
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UserApp.Core", "UserApp.Core\UserApp.Core.csproj", "{41FDCA58-030C-4343-8339-B4E39307DA93}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UserApp.Domain", "..\Domain\UserApp.Domain.csproj", "{D8FFFF00-C37A-4B2E-986F-449A6ADB449B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UserApp.Domain", "UserApp.Domain\UserApp.Domain.csproj", "{D8FFFF00-C37A-4B2E-986F-449A6ADB449B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
