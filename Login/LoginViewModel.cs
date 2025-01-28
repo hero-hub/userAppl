@@ -7,6 +7,7 @@ namespace App
     public class LoginViewModel : BaseViewModel
     {
         private readonly UserManager _userManager;
+        public bool _isInputEnabled;
 
         public LoginViewModel()
         {
@@ -17,6 +18,16 @@ namespace App
         public string Login { get; set; }
         public string Password { get; set; }
         public string ErrorMessage { get; set; }
+        public bool IsInputEnabled
+        {
+            get => _isInputEnabled;
+            set
+            {
+                _isInputEnabled = value;
+                OnPropertyChanged(nameof(IsInputEnabled));
+            } 
+        }
+        
 
         public ICommand LoginCommand { get; }
         public ICommand NavigateToRegistrationCommand { get; }

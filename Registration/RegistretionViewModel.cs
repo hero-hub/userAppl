@@ -40,12 +40,15 @@ namespace App
                     ErrorMessage = "Пустые поля";
                     break;
                 case 1:
-                    ErrorMessage = "Пароли не совпадают";
+                    ErrorMessage = "Ваша почта не валидна";
                     break;
                 case 2:
-                    ErrorMessage = "Email уже зарегистрирован";
+                    ErrorMessage = "Пароли не совпадают";
                     break;
                 case 3:
+                    ErrorMessage = "Email уже зарегистрирован";
+                    break;
+                case 4:
                     ErrorMessage = "Успешная регистрация";
                     break;
             }

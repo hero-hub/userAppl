@@ -4,19 +4,24 @@
         Title="Вход" Height="300" Width="400">
 
     <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Orientation="Vertical" Margin="20">
-
+        <!-- CheckBox -->
+        <CheckBox Content="On/Off authorization" IsChecked="{Binding IsInputEnabled}"/>
+        
         <!-- имя пользователя или почта -->
         <TextBlock Text="Имя пользователя или Email:" Margin="5" />
-        <TextBox Text="{Binding Login, UpdateSourceTrigger=PropertyChanged}" Width="250" Margin="5" />
+        <TextBox Text="{Binding Login, UpdateSourceTrigger=PropertyChanged}" Width="250" Margin="5" 
+                 IsEnabled="{Binding IsInputEnabled}"/>
         
         <!-- пароль -->
         <TextBlock Text="Пароль:" Margin="5" />
-        <TextBox Text="{Binding Password, UpdateSourceTrigger=PropertyChanged}" Width="250" Margin="5" />
+        <TextBox Text="{Binding Password, UpdateSourceTrigger=PropertyChanged}" Width="250" Margin="5" 
+                 IsEnabled="{Binding IsInputEnabled}"/>
         <TextBlock Text="{Binding ErrorMessage, Mode=OneWay}" Foreground="Red" Margin="5" />
 
 
         <!-- кнопка Войти -->
-        <Button Content="Войти" Width="150" Margin="10" Command="{Binding LoginCommand}" FontFamily="Century Gothic" />
+        <Button Content="Войти" Width="150" Margin="10" Command="{Binding LoginCommand}" FontFamily="Century Gothic" 
+                IsEnabled="{Binding IsInputEnabled}"/>
 
         <!-- кнопка Регистрация -->
         <Button Content="Регистрация" Width="150" Margin="10" Click="RegistrationButton_Click" FontFamily="Century Gothic" />

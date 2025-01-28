@@ -2,6 +2,7 @@
 using System.IO;
 using System.Linq;
 using UserApp.Domain.Models;
+using System.Text.RegularExpressions;
 
 namespace UserApp.Core
 {
@@ -10,6 +11,7 @@ namespace UserApp.Core
         private List<DataUserModel> _users = new List<DataUserModel>(); // Лист пользователей
         private readonly HashingService _hashingService = new HashingService(); // Объект класса HashingService
         private string filePath = "users.txt";
+        private string emailRegex = @"^[a-zA-Z0-9!#$%^&*()+=?{}|~`_/.-]+@(?:gmail|mail)\.(?:ru|com)$";
 
         public void SaveUsers()
         {
@@ -50,13 +52,15 @@ namespace UserApp.Core
                 string.IsNullOrWhiteSpace(user.RepeatPass))
                 return 0; // Пустые поля
 
+            if (!Regex.Match(user.Email, emailRegex).Success) return 1; // Валидация почты
+
             LoadUsers();
 
             if (user.Password != user.RepeatPass)
-                return 1; // Пароли не совпадают
+                return 2; // Пароли не совпадают
 
             if (_users.Exists(u => u.UserName == user.UserName || u.Email == user.Email))
-                return 2; // Пользователь уже существует
+                return 3; // Пользователь уже существует
 
             // Хеширование пароля
             var hashUser = user;
@@ -64,7 +68,7 @@ namespace UserApp.Core
             user.Password = hashUser.Password;
 
             _users.Add(user);
-            return 3; // Успешная регистрация
+            return 4; // Успешная регистрация
         }
 
         // Авторизация
