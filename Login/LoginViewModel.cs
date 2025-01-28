@@ -1,5 +1,6 @@
 ﻿using System.Windows;
 using System.Windows.Input;
+using UserApp.Core;
 
 namespace App
 {
@@ -24,10 +25,22 @@ namespace App
         {
             int result = _userManager.Signin(Login, Password);
 
-            ErrorMessage = result == 3 ? "Пользователь не найден" : string.Empty;
-            ErrorMessage = result == 2 ? "Неверный пароль" : string.Empty;
-            ErrorMessage = result == 1 ? "Успешный код" : string.Empty;
-            ErrorMessage = result == 0 ? "Пустые поля" : string.Empty;
+            ErrorMessage = string.Empty;
+            switch (result)
+            {
+                case 0:
+                    ErrorMessage = "Пустые поля";
+                    break;
+                case 1:
+                    ErrorMessage = "Успешний вход";
+                    break;
+                case 2:
+                    ErrorMessage = "Пароль не верный";
+                    break;
+                case 3:
+                    ErrorMessage = "Пользователь не найден";
+                    break;
+            }
 
             OnPropertyChanged(nameof(ErrorMessage));
         }

@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Windows;
 using System.Windows.Input;
+using UserApp.Core;
+using UserApp.Domain.Models;
 
 namespace App
 {
@@ -30,14 +32,26 @@ namespace App
             };
 
             int result = _userManager.Register(user);
-            MessageBox.Show(result == 0 ? "" : ""); // временный вывод
 
-            ErrorMessage = result == 3 ? "Успешная регистрация" : string.Empty;
-            ErrorMessage = result == 2 ? "Email уже зарегистрирован" : string.Empty;
-            ErrorMessage = result == 1 ? "Пароли не совпадают" : string.Empty;
-            ErrorMessage = result == 0 ? "Пустые поля" : string.Empty;
+            ErrorMessage = string.Empty;
+            switch (result)
+            {
+                case 0:
+                    ErrorMessage = "Пустые поля";
+                    break;
+                case 1:
+                    ErrorMessage = "Пароли не совпадают";
+                    break;
+                case 2:
+                    ErrorMessage = "Email уже зарегистрирован";
+                    break;
+                case 3:
+                    ErrorMessage = "Успешная регистрация";
+                    break;
+            }
 
             OnPropertyChanged(nameof(ErrorMessage));
+
         }
 
         public RegistrationVM()

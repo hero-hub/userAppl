@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using UserApp.Domain.Models;
 
 namespace UserApp.Core
 {
