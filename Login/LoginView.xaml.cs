@@ -9,11 +9,11 @@ namespace App
             InitializeComponent();
             DataContext = new LoginViewModel();
         }
-        private void RegistrationButton_Click(object sender, RoutedEventArgs e)
-        {
-            RegistrationWindow regWindow = new RegistrationWindow();
-            regWindow.Show();
-            this.Close();
-        }
+        //private void RegistrationButton_Click(object sender, RoutedEventArgs e)
+        //{
+        //    RegistrationWindow regWindow = new RegistrationWindow();
+        //    regWindow.Show();
+        //    this.Close();
+        //}
     }
 }

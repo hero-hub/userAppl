@@ -8,13 +8,13 @@ namespace App
         public RegistrationWindow()
         {
             InitializeComponent();
-            DataContext = new RegistrationVM();
+            DataContext = new RegistrationViewModel();
         }
-        private void LoginButton_Click(object sender, RoutedEventArgs e)
-        {
-            LoginWindow loginWindow = new LoginWindow();
-            loginWindow.Show();
-            this.Close();
-        }
+        //private void LoginButton_Click(object sender, RoutedEventArgs e)
+        //{
+        //    LoginWindow loginWindow = new LoginWindow();
+        //    loginWindow.Show();
+        //    this.Close();
+        //}
     }
 }

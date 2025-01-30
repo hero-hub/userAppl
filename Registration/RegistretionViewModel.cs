@@ -6,7 +6,7 @@ using UserApp.Domain.Models;
 
 namespace App
 {
-    public class RegistrationVM : BaseViewModel
+    public class RegistrationViewModel : BaseViewModel
     {
         private readonly UserManager _userManager;
 
@@ -57,7 +57,7 @@ namespace App
 
         }
 
-        public RegistrationVM()
+        public RegistrationViewModel()
         {
             _userManager = new UserManager();
             RegisterCommand = new RelayCommand(Register);

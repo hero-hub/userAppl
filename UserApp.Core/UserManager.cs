@@ -66,8 +66,8 @@ namespace UserApp.Core
             var hashUser = user;
             hashUser.Password = _hashingService.HashPassword(hashUser.Password);
             user.Password = hashUser.Password;
-
             _users.Add(user);
+            SaveUsers();
             return 4; // Успешная регистрация
         }
 
