@@ -26,5 +26,6 @@ namespace Domain.Data
             //    .WithMany(p => p.Orders)
             //    .HasForeignKey(o => o.PersonId);
         }
+        public DbSet<Tables.Person> Persons { get; set; }
     }
 }
