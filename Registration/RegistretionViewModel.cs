@@ -21,6 +21,11 @@ namespace App
 
         public ICommand RegisterCommand { get; }
 
+        public RegistrationViewModel()
+        {
+            _userManager = new UserManager();
+            RegisterCommand = new RelayCommand(Register);
+        }
         private void Register(object parameter)
         {
             AdvencedUserModel user = new AdvencedUserModel
@@ -57,10 +62,5 @@ namespace App
 
         }
 
-        public RegistrationViewModel()
-        {
-            _userManager = new UserManager();
-            RegisterCommand = new RelayCommand(Register);
-        }
     }
 }
