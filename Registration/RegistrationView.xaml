@@ -1,0 +1,11 @@
+﻿<Window x:Class="userAppl.Registration.RegistrationView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:app="clr-namespace:userAppl" 
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:us="clr-namespace:userAppl.UserControls"
+        Title="Регистрация" Height="500" Width="400">
+
+    <Grid>
+        <us:RegistrationUserControl/>
+    </Grid>
+</Window>
